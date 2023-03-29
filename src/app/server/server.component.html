@@ -1,0 +1,46 @@
+<h2>Angular-Server</h2>
+<div class = "split left">
+  <div>
+    <label for="input-field">Search Servers: </label>
+    <input type="text" [(ngModel)]="inputField" id="server-id" placeholder="Input name or id">
+
+    <button type="button" (click)="searchByName(inputField)"> Search By Name</button>
+    <button type="button" (click)="searchById(inputField)">Search By Id</button>
+  </div>
+
+  <div class="input">
+    <form [formGroup]="checkoutForm" (ngSubmit) ="add()">
+
+        <label for="id"> Id </label>
+        <input id="id" type="text" formControlName="id" placeholder="Server ID">
+
+        <label for="name"> Name </label>
+        <input id="name" type="text" formControlName="name" placeholder="Server Name">
+
+        <label for="language">  language </label>
+        <input id="language" type="text" formControlName="language" placeholder="Server Language">
+
+        <label for="platform">  Address </label>
+        <input id="platform" type="text" formControlName="platform" placeholder="Server Platform" >
+
+      <button class="button" type="submit">Add Server</button>
+    </form>
+  </div>
+
+</div>
+
+<div class = "split right">
+  <ul class="server">
+    <li *ngFor="let server of servers">
+      <span class="badge">{{ server.id || -1 }}</span>
+      <span class="name">{{server.name}}</span>
+      <span class = "language">{{server.language}} </span>
+      <span class = "platform">{{server.platform}}</span>
+
+      <button type="button" class="delete" title="delete server"
+        (click)="delete(server)">
+        Delete
+      </button>
+    </li>
+  </ul>
+</div>

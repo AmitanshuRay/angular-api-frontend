@@ -1,0 +1,131 @@
+  input {
+    margin: 1rem 0;
+  }
+
+  h2{
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em; 
+    display: block;
+    color: blue;
+    text-decoration-line: underline;
+  }
+  
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .left button {
+    background-color: darkgrey;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+  }
+  
+  .left button:hover {
+    background-color: darkcyan;
+  }
+  
+  .split div{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  .server {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .server li {
+    display: grid;
+    grid-template-columns: min-content max-content max-content 1fr max-content;
+    grid-template-areas: "badge name language platform . delete";
+    margin: 1rem 0;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 4px;
+  }
+  
+  .server li .badge {
+    grid-area: badge;
+    background-color: #0a0a0a;
+  }
+  
+  .server li .name {
+    width:100px;
+    width:20vw;
+    grid-area: name;
+    color: blue;
+    align-items: center;
+  }
+  
+  .server li .language{
+    width:20vw;
+    grid-area: language;
+    color: green;
+  }
+
+  .server li .platform{
+    width:0vw;
+    grid-area: platform;
+    color: rgb(193, 72, 72);
+    align-items: center;
+  }
+  .server li button {
+    margin: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    background-color: darkgrey;
+  }
+  
+  .server li button.delete {
+    grid-area: delete;
+  }
+  
+  .server li button:hover, .servers li button:focus {
+    color: #eee;
+    background-color: #e01b1b;
+  }
+  
+  .server .badge {
+    padding: 0.5rem 0.6rem;
+    color: white;
+    background-color: #435B60;
+    margin-right: 0.8rem;
+    border-radius: 4px 0 0 4px;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 550px) {
+    .server li {
+      grid-template-columns: min-content 1fr 1fr;
+      grid-template-rows: 2rem max-content;
+      grid-template-areas:
+        "badge name language platform"
+        "badge delete";
+    }
+  
+    .server li .name {
+      margin-top: 0.3rem;
+    }
+
+    .server li .language{
+      margin-top: 0.3 rem;
+    }
+
+    .server li .platform{
+      margin-top: 0.3 rem;
+    }
+
+    .server li button {
+      justify-self: center;
+    }
+
+
+  }
